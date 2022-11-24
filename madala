@@ -1,0 +1,30 @@
+# mandala bonita de hojas
+import turtle as tu
+import colorsys
+tu.bgcolor("black")
+t = tu.Turtle()
+t.speed(0)
+h = 45
+t.pensize(2)
+
+def design(ce,n):
+	t.circle(n*1.2,90)
+	t.left(ce)
+	t.circle(n*1.2,90)
+
+t.penup()
+t.goto(0,100)
+t.pendown()
+
+for i in range(95):
+	c = colorsys.hsv_to_rgb(h, 0.8,1)
+	t.pencolor(c)
+	design(150,i)
+	design(90,i)
+	design(90,i)
+	design(150,i)
+	design(150,i)
+
+	h += 0.015
+
+tu.done()
